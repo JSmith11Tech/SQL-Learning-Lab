@@ -1,0 +1,2 @@
+-- Practice queries using SELECT, WHERE, LIKE, BETWEEN,
+-- AND, OR, ORDER BY, LIMIT, DISTINCT, AS, IS NULL, and CASE.

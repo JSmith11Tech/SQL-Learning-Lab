@@ -12,8 +12,8 @@
 
 SELECT *
 FROM tickets
-WHERE status = 'Open'
-  AND priority = 'High'
+WHERE status = 'open'
+  AND priority = 'high'
 ORDER BY created_at DESC
 LIMIT 5;
 
@@ -26,7 +26,7 @@ LIMIT 5;
 SELECT *
 FROM tickets
 WHERE issue_type LIKE '%login%'
-  AND status = 'Open'
+  AND status = 'open'
 ORDER BY priority;
 
 
@@ -46,19 +46,19 @@ FROM tickets;
 SELECT *
 FROM tickets
 WHERE created_at BETWEEN '2026-01-01' AND '2026-01-31'
-  AND (priority = 'High' OR priority = 'Critical')
+  AND (priority = 'high' OR priority = 'critical')
 LIMIT 10;
 
 
 -- Challenge 5:
 -- Show each ticket's ticket_id and priority.
 -- Add a new output column called handling.
--- If priority is 'Critical', label it 'Escalate'.
+-- If priority is 'critical', label it 'Escalate'.
 -- Otherwise label it 'Standard'.
 
 SELECT ticket_id, priority,
   CASE
-    WHEN priority = 'Critical' THEN 'Escalate'
+    WHEN priority = 'critical' THEN 'Escalate'
     ELSE 'Standard'
   END AS handling
 FROM tickets;

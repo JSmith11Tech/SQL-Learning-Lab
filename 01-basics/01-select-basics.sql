@@ -1,1 +1,11 @@
+-- SQL Learning Lab: Select Basics
+-- Practice retrieving data from a table using basic SELECT statements.
+-- Focus on choosing columns, viewing complete records, and getting comfortable
+-- reading simple query results.
+--------------------------------
 
+-- Skills practiced:
+-- SELECT
+-- FROM
+-- Selecting specific columns
+-- Selecting all columns with *

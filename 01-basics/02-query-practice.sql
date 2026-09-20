@@ -1,20 +1,14 @@
 -- Practice queries using SELECT, WHERE, LIKE, BETWEEN,
 -- AND, OR, ORDER BY, LIMIT, DISTINCT, AS, IS NULL, and CASE.
 
+-- Table used:
+-- tickets: ticket_id, user_id, issue_type, priority, status, created_at
+
+
 -- Challenge 1:
 -- Show only open, high-priority tickets.
 -- Sort newest tickets first.
 -- Return only the first 5 results.
-
---You have a table called tickets with these columns:
-  
---ticket_id
---user_id
---issue_type
---priority
---status
---created_at
-
 
 SELECT *
 FROM tickets
@@ -22,7 +16,6 @@ WHERE status = 'Open'
   AND priority = 'High'
 ORDER BY created_at DESC
 LIMIT 5;
-
 
 
 -- Challenge 2:
@@ -37,14 +30,12 @@ WHERE issue_type LIKE '%login%'
 ORDER BY priority;
 
 
-
 -- Challenge 3:
 -- Show each unique issue type only once.
 -- Rename the output column to issue_category.
 
 SELECT DISTINCT issue_type AS issue_category
 FROM tickets;
-
 
 
 -- Challenge 4:
@@ -59,36 +50,15 @@ WHERE created_at BETWEEN '2026-01-01' AND '2026-01-31'
 LIMIT 10;
 
 
-
 -- Challenge 5:
 -- Show each ticket's ticket_id and priority.
 -- Add a new output column called handling.
 -- If priority is 'Critical', label it 'Escalate'.
 -- Otherwise label it 'Standard'.
 
-SELECT ticket_id, priority, 
+SELECT ticket_id, priority,
   CASE
     WHEN priority = 'Critical' THEN 'Escalate'
     ELSE 'Standard'
-END AS Handling
+  END AS handling
 FROM tickets;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
